@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elysian Estates</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Babel for in-browser JSX/TSX transformation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Cormorant Garamond', 'serif'],
+            },
+            colors: {
+              primary: {
+                DEFAULT: '#c09a5b',
+                dark: '#d4af7a',
+              },
+              background: {
+                light: '#f8f7f4',
+                dark: '#1a1a1a',
+              },
+              surface: {
+                light: '#ffffff',
+                dark: '#2c2c2c',
+              },
+              text: {
+                light: '#1a1a1a',
+                dark: '#f0f0f0',
+                muted: {
+                  light: '#6b7280',
+                  dark: '#9ca3af',
+                }
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <!-- Corrected and Minimal Import Map -->
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "https://esm.sh/react@18.2.0",
+          "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+          "react-router-dom": "https://esm.sh/react-router-dom@6.23.1",
+          "axios": "https://esm.sh/axios@1.7.2"
+        }
+      }
+    </script>
+</head>
+  <body class="font-sans bg-background-light text-text-light dark:bg-background-dark dark:text-text-dark">
+    <div id="root"></div>
+    <script>
+      // Avoids flash of un-styled content (FOUC) for dark mode
+      if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+    <script type="text/babel" data-presets="react,typescript" data-type="module" src="/index.tsx"></script>
+  </body>
+</html>

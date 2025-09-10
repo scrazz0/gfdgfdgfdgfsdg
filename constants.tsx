@@ -1,0 +1,148 @@
+
+import type { Property } from './types.ts';
+import { Language } from './types.ts';
+
+export const PROPERTIES: Property[] = [
+  {
+    id: 'p1',
+    title: 'Serene Downtown Loft',
+    location: 'Lisbon, Portugal',
+    city: 'Lisbon',
+    type: 'Residential',
+    imageUrl: 'https://picsum.photos/seed/p1/800/600',
+    description: 'A beautifully designed loft in the heart of Lisbon, offering stunning city views and modern amenities. Perfect for urban living and high rental demand.',
+    fullPrice: 800000,
+    minShare: 8000,
+    yield: 6.5,
+    details: { bedrooms: 2, bathrooms: 2, area: 120 },
+  },
+  {
+    id: 'p2',
+    title: 'Luxury Beachfront Villa',
+    location: 'Algarve, Portugal',
+    city: 'Algarve',
+    type: 'Residential',
+    imageUrl: 'https://picsum.photos/seed/p2/800/600',
+    description: 'An exquisite villa with direct beach access in the sunny Algarve. Features a private pool, lush gardens, and panoramic ocean views.',
+    fullPrice: 2500000,
+    minShare: 25000,
+    yield: 7.2,
+    details: { bedrooms: 5, bathrooms: 6, area: 450 },
+  },
+  {
+    id: 'p3',
+    title: 'Chic Parisian Apartment',
+    location: 'Le Marais, Paris',
+    city: 'Paris',
+    type: 'Residential',
+    imageUrl: 'https://picsum.photos/seed/p3/800/600',
+    description: 'A stylish apartment in the trendy Le Marais district. Combines classic Parisian architecture with contemporary design.',
+    fullPrice: 1200000,
+    minShare: 12000,
+    yield: 5.8,
+    details: { bedrooms: 3, bathrooms: 2, area: 95 },
+  },
+  {
+    id: 'p4',
+    title: 'Modern Business Center',
+    location: 'La Défense, Paris',
+    city: 'Paris',
+    type: 'Commercial',
+    imageUrl: 'https://picsum.photos/seed/p4/800/600',
+    description: 'Prime office space in Europe\'s largest business district. A high-demand location with long-term corporate tenants.',
+    fullPrice: 5000000,
+    minShare: 50000,
+    yield: 8.1,
+    details: { area: 1000 },
+  },
+  {
+    id: 'p5',
+    title: 'Cozy Riverside Chalet',
+    location: 'Moscow Oblast, Russia',
+    city: 'Moscow',
+    type: 'Residential',
+    imageUrl: 'https://picsum.photos/seed/p5/800/600',
+    description: 'A charming wooden chalet by the river, perfect for weekend getaways. A peaceful retreat with strong short-term rental potential.',
+    fullPrice: 600000,
+    minShare: 6000,
+    yield: 6.9,
+    details: { bedrooms: 4, bathrooms: 3, area: 200 },
+  },
+    {
+    id: 'p6',
+    title: 'Rio de Janeiro Penthouse',
+    location: 'Copacabana, Rio de Janeiro',
+    city: 'Rio de Janeiro',
+    type: 'Residential',
+    imageUrl: 'https://picsum.photos/seed/p6/800/600',
+    description: 'Breathtaking penthouse with a rooftop pool overlooking Copacabana beach. The ultimate in luxury and an iconic investment.',
+    fullPrice: 3200000,
+    minShare: 32000,
+    yield: 7.5,
+    details: { bedrooms: 4, bathrooms: 5, area: 350 },
+  },
+];
+
+export const NAV_LINKS = [
+  { path: '/', key: 'home' },
+  { path: '/properties', key: 'properties' },
+  { path: '/how-it-works', key: 'howItWorks' },
+  { path: '/about', key: 'aboutUs' },
+];
+
+export const LANGUAGES = [
+  { code: Language.EN, name: 'English' },
+  { code: Language.FR, name: 'Français' },
+  { code: Language.RU, name: 'Русский' },
+  { code: Language.PT, name: 'Português' },
+];
+
+export const TRANSLATIONS: Record<Language, Record<string, string>> = {
+  [Language.EN]: {
+    // Nav
+    home: 'Home',
+    properties: 'Properties',
+    howItWorks: 'How It Works',
+    aboutUs: 'About Us',
+    login: 'Login',
+    dashboard: 'Dashboard',
+    // Hero
+    heroTitle: 'Invest in Real Estate, Redefined.',
+    heroSubtitle: 'Access fractional ownership in premium properties and build your wealth through passive rental income.',
+    heroCta: 'Explore Properties',
+    // ... add all other keys
+  },
+  [Language.FR]: {
+    home: 'Accueil',
+    properties: 'Propriétés',
+    howItWorks: 'Comment ça marche',
+    aboutUs: 'À propos',
+    login: 'Connexion',
+    dashboard: 'Tableau de bord',
+    heroTitle: 'Investir dans l\'immobilier, redéfini.',
+    heroSubtitle: 'Accédez à la propriété fractionnée de biens d\'exception et construisez votre patrimoine grâce aux revenus locatifs passifs.',
+    heroCta: 'Explorer les propriétés',
+  },
+  [Language.RU]: {
+    home: 'Главная',
+    properties: 'Объекты',
+    howItWorks: 'Как это работает',
+    aboutUs: 'О нас',
+    login: 'Войти',
+    dashboard: 'Панель управления',
+    heroTitle: 'Инвестиции в недвижимость, переосмысленные.',
+    heroSubtitle: 'Получите доступ к долевому владению премиальной недвижимостью и создавайте свой капитал за счет пассивного дохода от аренды.',
+    heroCta: 'Смотреть объекты',
+  },
+  [Language.PT]: {
+    home: 'Início',
+    properties: 'Propriedades',
+    howItWorks: 'Como Funciona',
+    aboutUs: 'Sobre Nós',
+    login: 'Entrar',
+    dashboard: 'Painel',
+    heroTitle: 'Investimento em Imóveis, Redefinido.',
+    heroSubtitle: 'Acesse a propriedade fracionada em imóveis premium e construa seu patrimônio através de renda passiva de aluguel.',
+    heroCta: 'Explorar Propriedades',
+  },
+};
